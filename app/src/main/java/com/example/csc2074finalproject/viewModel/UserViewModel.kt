@@ -1,5 +1,6 @@
 package com.example.csc2074finalproject.viewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,12 +15,6 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
 
     val getUserName = userLiveData.value?.username
 
-    fun insertUserData(user: User) {
-        viewModelScope.launch {
-            dao.insertUser(user)
-        }
-    }
-
     fun findCurrentUser(name: String) = viewModelScope.launch {
         dao.findUserByUsername(name).collect {x ->
             if (Objects.isNull(x)) {
@@ -29,6 +24,15 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
             } else {
                 userLiveData.postValue(x)
             }
+        }
+    }
+
+    fun insertUserData(user: User) {
+        viewModelScope.launch {
+            Log.d("UserViewModel", "Inserting Data: $user")
+            dao.insertUser(user)
+            Log.d("UserViewModel", "Data inserted")
+            dao.insertUser(User(0,"qwe","123"))
         }
     }
 }
