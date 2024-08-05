@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
+
     tools:context=".fragment.HomeFragment">
 
     <ScrollView
@@ -35,7 +35,7 @@
                 android:layout_gravity="center"
                 android:id="@+id/login_username"
                 android:layout_marginTop="30dp"
-                android:background=""
+
                 android:padding="7dp"
                 android:hint="Username" />
 
@@ -45,9 +45,25 @@
                 android:layout_gravity="center"
                 android:id="@+id/login_password"
                 android:layout_marginTop="30dp"
-                android:background=""
+
                 android:padding="7dp"
                 android:hint="Password" />
+
+            <Button
+                android:id="@+id/login_btnLogin"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="Login" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Register"
+                android:textAlignment="center"/>
 
 
 

@@ -19,8 +19,8 @@ interface UserDao {
     @Query ("SELECT * FROM user WHERE user.username = :username")
     fun findUserByUsername(username: String): Flow<User?>
 
-    @Query ("SELECT * FROM user WHERE user.id = :userid")
-    fun findUserByUsername(userid: Int): LiveData<User?>
+    //@Query ("SELECT * FROM user WHERE user.id = :userid")
+    //fun findUserByUsername(userid: Int): LiveData<User?>
 
     @Query("SELECT * FROM user WHERE user.username=:username LIMIT 1")
     fun isValidUser(username: String): Flow<User?>

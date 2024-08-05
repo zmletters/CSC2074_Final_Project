@@ -7,9 +7,15 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.csc2074finalproject.fragment.HomeFragment"
+        android:name="com.example.csc2074finalproject.fragment.LoginFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
 
     <fragment

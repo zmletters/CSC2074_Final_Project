@@ -1,16 +1,13 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.example.csc2074finalproject"
     compileSdk = 34
 
-    dataBinding {
-        //noinspection DataBindingWithoutKapt
-        android.buildFeatures.dataBinding = true
-    }
     defaultConfig {
         applicationId = "com.example.csc2074finalproject"
         minSdk = 24
@@ -44,10 +41,11 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
         viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
     packaging {
         resources {
@@ -68,6 +66,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
+    ksp("androidx.room:room-compiler:2.5.0")
+    implementation("com.google.dagger:dagger:2.27")
+    annotationProcessor("com.google.dagger:dagger-compiler:2.27")
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.appcompat)

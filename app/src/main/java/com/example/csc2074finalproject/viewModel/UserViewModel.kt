@@ -10,7 +10,7 @@ import java.util.Objects
 
 
 class UserViewModel(private val dao: UserDao) : ViewModel() {
-    private val userLiveData: MutableLiveData<User?> = MutableLiveData()
+    val userLiveData: MutableLiveData<User?> = MutableLiveData()
 
     val getUserName = userLiveData.value?.username
 

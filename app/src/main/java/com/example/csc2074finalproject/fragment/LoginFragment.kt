@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import com.example.csc2074finalproject.R
 import com.example.csc2074finalproject.databinding.FragmentLoginBinding
-import com.example.csc2074finalproject.databinding.FragmentUserhomeBinding
 import com.example.csc2074finalproject.viewModel.UserViewModel
 
-class HomeFragment: Fragment() {
-    private lateinit var binding: FragmentUserhomeBinding
-    private val userViewModel: UserViewModel by activityViewModels()
+class LoginFragment: Fragment() {
+
+    private lateinit var binding: FragmentLoginBinding
+    private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +25,12 @@ class HomeFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        binding = FragmentUserhomeBinding.inflate(inflater,container,false)
-
-        userViewModel.userLiveData.observe(viewLifecycleOwner) { user ->
-            binding.homeUsername.text = user?.username
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.loginBtnLogin.setOnClickListener {
+            it.findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
         }
-
-
 
         return binding.root
     }
+
 }
