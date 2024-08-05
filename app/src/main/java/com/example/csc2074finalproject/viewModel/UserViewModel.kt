@@ -12,9 +12,23 @@ import java.util.Objects
 class UserViewModel(private val dao: UserDao) : ViewModel() {
     private val userLiveData: MutableLiveData<User?> = MutableLiveData()
 
+    val getUserName = userLiveData.value?.username
+
     fun insertUserData(user: User) {
         viewModelScope.launch {
+            dao.insertUser(user)
+        }
+    }
 
+    fun findCurrentUser(name: String) = viewModelScope.launch {
+        dao.findUserByUsername(name).collect {x ->
+            if (Objects.isNull(x)) {
+                val user = User(0, name, "asdf")
+                insertUserData(user)
+                userLiveData.value = user
+            } else {
+                userLiveData.postValue(x)
+            }
         }
     }
 }

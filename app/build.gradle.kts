@@ -7,6 +7,10 @@ android {
     namespace = "com.example.csc2074finalproject"
     compileSdk = 34
 
+    dataBinding {
+        //noinspection DataBindingWithoutKapt
+        android.buildFeatures.dataBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.csc2074finalproject"
         minSdk = 24
@@ -19,6 +23,8 @@ android {
             useSupportLibrary = true
         }
     }
+
+
 
     buildTypes {
         release {
@@ -38,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -63,6 +70,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

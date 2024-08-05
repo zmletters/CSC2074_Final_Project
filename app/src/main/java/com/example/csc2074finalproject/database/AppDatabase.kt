@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.csc2074finalproject.DAO.UserDao
 import com.example.csc2074finalproject.entity.User
 
 @Database(
@@ -13,6 +14,8 @@ import com.example.csc2074finalproject.entity.User
 )
 
 abstract class AppDatabase : RoomDatabase() {
+    abstract fun userDao(): UserDao
+
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
