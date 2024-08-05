@@ -58,11 +58,13 @@
                 android:text="Login" />
 
             <TextView
-                android:layout_width="350dp"
+                android:id="@+id/login_RegisterHereTxt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:text="Register"
+                android:layout_marginTop="15dp"
+                android:text="Does not have an account? Click Here!"
+                android:textStyle="italic"
                 android:textAlignment="center"/>
 
 

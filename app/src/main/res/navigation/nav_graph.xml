@@ -11,18 +11,22 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_userHomeFragment"
-            app:destination="@id/userHomeFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.csc2074finalproject.fragment.HomeFragment"
+        android:name="com.example.csc2074finalproject.fragment.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
