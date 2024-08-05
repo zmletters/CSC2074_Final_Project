@@ -28,6 +28,11 @@ class LoginFragment: Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.loginBtnLogin.setOnClickListener {
+
+            // Check Username and password
+
+
+
             it.findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
         }
         binding.loginRegisterHereTxt.setOnClickListener {

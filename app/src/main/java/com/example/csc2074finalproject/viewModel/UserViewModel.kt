@@ -32,7 +32,7 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
             Log.d("UserViewModel", "Inserting Data: $user")
             dao.insertUser(user)
             Log.d("UserViewModel", "Data inserted")
-            dao.insertUser(User(0,"qwe","123"))
+            //dao.insertUser(User(0,"qwe","123"))
         }
     }
 }

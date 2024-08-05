@@ -34,7 +34,14 @@ class RegisterFragment: Fragment() {
             val password: String = binding.registerPassword.text.toString()
             val confpassword: String = binding.registerConfirmpassword.text.toString()
 
-            if (inputCheck(username,password,confpassword)) {
+            if (passwordCheck(password, confpassword)) {
+                Toast.makeText(requireContext(), "Passwords are not the same.", Toast.LENGTH_LONG)
+                    .show()
+            } else if (true) {
+                // TODO check for username taken
+
+                Toast.makeText(requireContext(), "Username has been taken", Toast.LENGTH_LONG).show()
+            } else if (inputCheck(username,password,confpassword)) {
                 // Create user object
                 val user = User(0, username, password)
 
@@ -47,8 +54,6 @@ class RegisterFragment: Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Please ensure fields are entered correctly.", Toast.LENGTH_LONG).show()
             }
-
-
         }
 
         return binding.root
@@ -57,4 +62,9 @@ class RegisterFragment: Fragment() {
     private fun inputCheck(username: String, password: String, confpass: String): Boolean {
         return !(TextUtils.isEmpty(username) && TextUtils.isEmpty(password) && TextUtils.isEmpty(confpass))
     }
+    private fun passwordCheck(password: String, confpass: String) :Boolean {
+        return password != confpass
+    }
+
+
 }
