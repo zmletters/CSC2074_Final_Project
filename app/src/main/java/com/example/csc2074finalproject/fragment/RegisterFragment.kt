@@ -37,7 +37,7 @@ class RegisterFragment: Fragment() {
             if (passwordCheck(password, confpassword)) {
                 Toast.makeText(requireContext(), "Passwords are not the same.", Toast.LENGTH_LONG)
                     .show()
-            } else if (true) {
+            } else if (false) {
                 // TODO check for username taken
 
                 Toast.makeText(requireContext(), "Username has been taken", Toast.LENGTH_LONG).show()

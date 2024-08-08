@@ -36,4 +36,20 @@
         tools:layout="@layout/fragment_userhome">
     </fragment>
 
+    <fragment
+        android:id="@+id/makeAppointmentFragment"
+        android:name="com.example.csc2074finalproject.fragment.MakeAppointmentFragment"
+        android:label="fragment_makeAppointment"
+        tools:layout="@layout/fragment_makeappointment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/appointmentHistoryFragment"
+        android:name="com.example.csc2074finalproject.fragment.AppointmentHistoryFragment"
+        android:label="fragment_appointmentHistory"
+        tools:layout="@layout/fragment_appointmenthistory">
+
+    </fragment>
+
 </navigation>

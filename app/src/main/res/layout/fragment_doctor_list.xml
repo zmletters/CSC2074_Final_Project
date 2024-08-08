@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- https://www.youtube.com/watch?v=tQ7V7iBg5zE -->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/fragment_doctor_list_searchView"
+        android:layout_width="400dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/search_view_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search Here..." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

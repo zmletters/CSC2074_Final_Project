@@ -35,11 +35,14 @@ class LoginFragment: Fragment() {
 
             // Check Username and password
             Log.d("LoginFrag", "$username $password")
-            viewModel.signInUser(username, password)
-
-
-            it.findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
+            if (viewModel.signInUser(username, password)) {
+                Toast.makeText(context, "Login Successful", Toast.LENGTH_LONG).show()
+                it.findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
+            } else {
+                Toast.makeText(context, "Wrong credentials. Please try again!", Toast.LENGTH_LONG).show()
+            }
         }
+
         binding.loginRegisterHereTxt.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
