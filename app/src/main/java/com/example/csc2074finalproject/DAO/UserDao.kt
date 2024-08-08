@@ -25,4 +25,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user WHERE user.username=:username LIMIT 1")
     fun isValidUser(username: String): Flow<User?>
+
+    @Query("SELECT * FROM user WHERE user.username=:username AND user.password=:password")
+    fun checkPassword(username:String, password:String): Boolean
 }

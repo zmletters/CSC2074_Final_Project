@@ -30,6 +30,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "app.db"
                 )
+                    .allowMainThreadQueries()
                     .createFromAsset("app.db")
                     .build()
                 INSTANCE = instance

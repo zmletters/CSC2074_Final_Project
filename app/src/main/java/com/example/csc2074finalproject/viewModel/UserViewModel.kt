@@ -12,8 +12,8 @@ import java.util.Objects
 
 class UserViewModel(private val dao: UserDao) : ViewModel() {
     val userLiveData: MutableLiveData<User?> = MutableLiveData()
-
-    val getUserName = userLiveData.value?.username
+    val userLiveDataName: MutableLiveData<String?> = MutableLiveData()
+    //val getUserName = userLiveData.value?.username
 
     fun findCurrentUser(name: String) = viewModelScope.launch {
         dao.findUserByUsername(name).collect {x ->
@@ -34,5 +34,17 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
             Log.d("UserViewModel", "Data inserted")
             //dao.insertUser(User(0,"qwe","123"))
         }
+    }
+
+    fun signInUser(name: String, password: String): Boolean {
+        viewModelScope.launch {
+            Log.d("UserViewModel", "SignInUser")
+            val boo = dao.checkPassword(name, password)
+            Log.d("UserViewModel", "Validation: $boo")
+            if (boo) {
+                userLiveDataName.value = name
+            }
+        }
+        return dao.checkPassword(name, password)
     }
 }

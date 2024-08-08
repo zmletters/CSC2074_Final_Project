@@ -26,8 +26,8 @@ class HomeFragment: Fragment() {
 
         binding = FragmentUserhomeBinding.inflate(inflater,container,false)
 
-        userViewModel.userLiveData.observe(viewLifecycleOwner) { user ->
-            binding.homeUsername.text = user?.username
+        userViewModel.userLiveDataName.observe(viewLifecycleOwner) { username ->
+            binding.homeUsername.text = username
         }
 
 

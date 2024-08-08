@@ -1,6 +1,7 @@
 package com.example.csc2074finalproject.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,14 @@ class LoginFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         binding.loginBtnLogin.setOnClickListener {
+            val username = binding.loginUsername.text.toString()
+            val password = binding.loginPassword.text.toString()
 
             // Check Username and password
-
+            Log.d("LoginFrag", "$username $password")
+            viewModel.signInUser(username, password)
 
 
             it.findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
