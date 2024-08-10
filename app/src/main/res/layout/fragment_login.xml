@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/pastel_green"
     tools:context=".fragment.LoginFragment">
 
     <ScrollView
@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="230dp"
+                android:layout_marginTop="330dp"
                 android:layout_gravity="center"
                 android:text="Login"
                 android:textSize="40dp"

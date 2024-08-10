@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!-- https://www.youtube.com/watch?v=tQ7V7iBg5zE -->
+    android:background="@color/pastel_green"
+    android:fillViewport="true"
+    tools:context=".fragment.DoctorListFragment">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/fragment_doctor_list_searchView"
-        android:layout_width="400dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/search_view_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:queryHint="Search Here..." />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- RecyclerView to display the list of doctors -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/doctorlist_recyclerViewDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
+
+</ScrollView>

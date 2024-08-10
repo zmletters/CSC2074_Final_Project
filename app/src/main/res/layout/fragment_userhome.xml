@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@color/pastel_green"
     tools:context=".fragment.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,11 +70,11 @@
                 android:id="@+id/home_layout_appointment_box"
                 android:layout_width="156dp"
                 android:layout_height="67dp"
-                android:layout_marginStart="204dp"
+                android:layout_marginStart="28dp"
                 android:background="@drawable/drawable_box_rounded_corners"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/home_layout_appointment_date_box"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.023"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -107,12 +108,10 @@
                 android:id="@+id/home_layout_appointment_date_box"
                 android:layout_width="156dp"
                 android:layout_height="67dp"
-                android:layout_marginEnd="228dp"
+                android:layout_marginEnd="28dp"
                 android:background="@drawable/drawable_box_rounded_corners"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/home_layout_appointment_box"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
@@ -175,21 +174,32 @@
             app:layout_constraintTop_toBottomOf="@+id/home_container_pictures">
 
             <Button
-                android:id="@+id/home_btn_make_appointment"
+                android:id="@+id/home_btn_doctor_list"
                 android:layout_width="380dp"
                 android:layout_height="70dp"
-                android:text="Button"
+                android:text="Doctor List"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:id="@+id/home_btn_make_appointment"
+                android:layout_width="380dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:text="Make Appointment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_btn_doctor_list" />
+
+            <Button
                 android:id="@+id/home_btn_appointment_history"
                 android:layout_width="380dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
-                android:text="Button"
+                android:text="Appointment History"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toStartOf="parent"

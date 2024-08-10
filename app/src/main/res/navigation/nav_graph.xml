@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/main_nav"
     app:startDestination="@id/loginFragment">
 
     <fragment
@@ -34,6 +34,12 @@
         android:name="com.example.csc2074finalproject.fragment.HomeFragment"
         android:label="fragment_userHome"
         tools:layout="@layout/fragment_userhome">
+        <action
+            android:id="@+id/action_userHomeFragment_to_doctorListFragment"
+            app:destination="@+id/doctorListFragment"/>
+        <action
+            android:id="@+id/action_userHomeFragment_to_appointmentHistoryFragment"
+            app:destination="@id/appointmentHistoryFragment" />
     </fragment>
 
     <fragment
@@ -41,15 +47,41 @@
         android:name="com.example.csc2074finalproject.fragment.MakeAppointmentFragment"
         android:label="fragment_makeAppointment"
         tools:layout="@layout/fragment_makeappointment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorListFragment"
+        android:name="com.example.csc2074finalproject.fragment.DoctorListFragment"
+        android:label="fragment_doctorList"
+        tools:layout="@layout/fragment_doctor_list">
+        <action
+            android:id="@+id/action_doctorListFragment_to_doctorDetailsFragment"
+            app:destination="@+id/doctorDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorDetailsFragment"
+        android:name="com.example.csc2074finalproject.fragment.DoctorDetailsFragment"
+        android:label="fragment_doctorDetails"
+        tools:layout="@layout/fragment_doctor_details">
+        <action
+            android:id="@+id/action_doctorDetailsFragment_to_makeAppointmentFragment"
+            app:destination="@+id/makeAppointmentFragment" />
+        <action
+            android:id="@+id/action_doctorDetailsFragment_to_doctorListFragment"
+            app:destination="@+id/doctorListFragment" />
+        <argument
+            android:name="doctor_args"
+            app:argType="integer"
+            app:nullable="false" />
 
     </fragment>
 
     <fragment
         android:id="@+id/appointmentHistoryFragment"
-        android:name="com.example.csc2074finalproject.fragment.AppointmentHistoryFragment"
+        android:name="com.example.csc2074finalproject.fragment.DoctorListFragment"
         android:label="fragment_appointmentHistory"
         tools:layout="@layout/fragment_appointmenthistory">
-
     </fragment>
 
 </navigation>

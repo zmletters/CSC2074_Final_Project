@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import com.example.csc2074finalproject.R
 import com.example.csc2074finalproject.databinding.FragmentLoginBinding
 import com.example.csc2074finalproject.databinding.FragmentUserhomeBinding
 import com.example.csc2074finalproject.viewModel.UserViewModel
@@ -30,7 +32,9 @@ class HomeFragment: Fragment() {
             binding.homeUsername.text = username
         }
 
-
+        binding.homeBtnDoctorList.setOnClickListener {
+            it.findNavController().navigate(R.id.action_userHomeFragment_to_doctorListFragment)
+        }
 
         return binding.root
     }

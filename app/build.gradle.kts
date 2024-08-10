@@ -1,7 +1,10 @@
+import org.jetbrains.kotlin.fir.declarations.builder.buildScript
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.navigation.safe.args)
 }
 
 android {
@@ -20,6 +23,10 @@ android {
             useSupportLibrary = true
         }
     }
+
+
+
+
 
 
 
@@ -66,6 +73,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.recyclerview)
     ksp("androidx.room:room-compiler:2.5.0")
     implementation("com.google.dagger:dagger:2.27")
     annotationProcessor("com.google.dagger:dagger-compiler:2.27")
@@ -79,4 +87,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7") // or latest version
 }
