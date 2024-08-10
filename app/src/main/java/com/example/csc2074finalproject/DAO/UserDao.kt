@@ -28,4 +28,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user WHERE user.username=:username AND user.password=:password")
     fun checkPassword(username:String, password:String): Boolean
+
+    @Query("SELECT id FROM user WHERE user.username=:username")
+    fun findUserID(username:String): Int?
 }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,6 +39,10 @@ class DoctorListFragment: Fragment() {
 
         // Initialize Recycler View and data
         setupRecyclerView()
+
+        binding.homeButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_doctorListFragment_to_userHomeFragment)
+        }
 
         return binding.root
     }
