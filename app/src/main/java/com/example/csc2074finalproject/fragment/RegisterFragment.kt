@@ -38,8 +38,6 @@ class RegisterFragment: Fragment() {
                 Toast.makeText(requireContext(), "Passwords are not the same.", Toast.LENGTH_LONG)
                     .show()
             } else if (false) {
-                // TODO check for username taken
-
                 Toast.makeText(requireContext(), "Username has been taken", Toast.LENGTH_LONG).show()
             } else if (inputCheck(username,password,confpassword)) {
                 // Create user object

@@ -31,4 +31,7 @@ interface UserDao {
 
     @Query("SELECT id FROM user WHERE user.username=:username")
     fun findUserID(username:String): Int?
+
+    @Query("SELECT EXISTS (SELECT 1 FROM user WHERE username = :username)")
+    fun isUsernameTaken(username: String): LiveData<Boolean>
 }

@@ -18,17 +18,6 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
 
     //val getUserName = userLiveData.value?.username
 
-    fun findCurrentUser(name: String) = viewModelScope.launch {
-        dao.findUserByUsername(name).collect {x ->
-            if (Objects.isNull(x)) {
-                val user = User(0, name, "asdf")
-                insertUserData(user)
-                userLiveData.value = user
-            } else {
-                userLiveData.postValue(x)
-            }
-        }
-    }
 
     fun insertUserData(user: User) {
         viewModelScope.launch {
@@ -50,6 +39,23 @@ class UserViewModel(private val dao: UserDao) : ViewModel() {
             }
         }
         return dao.checkPassword(name, password)
+    }
+
+
+    fun findCurrentUser(name: String) = viewModelScope.launch {
+        dao.findUserByUsername(name).collect {x ->
+            if (Objects.isNull(x)) {
+                val user = User(0, name, "asdf")
+                insertUserData(user)
+                userLiveData.value = user
+            } else {
+                userLiveData.postValue(x)
+            }
+        }
+    }
+
+    fun isUsernameTaken(username: String): LiveData<Boolean> {
+        return dao.isUsernameTaken(username)
     }
 
 }
