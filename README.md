@@ -11,5 +11,3 @@ The main objective of this assignment was to:
 - Learn to define and use **classes** and **objects**
 - Implement basic interactions between objects in Java
 
-**Language**: Java
-**Platform**: Command Line
